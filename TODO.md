@@ -1,4 +1,2 @@
-- add context for LLM query
-- build web app
-- add user context (chat history)
 - add user authentication (so API is not public)
+- add user context (chat history, using user authentication)
