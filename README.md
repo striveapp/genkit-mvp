@@ -29,5 +29,8 @@ This outputs a service URL.
 
 ```bash
 curl -X POST $SERVICE_URL/menuSuggestionFlow \
--H "Content-Type: application/json" -d '{"data": "banana"}'
+-H "Content-Type: application/json" -d '{
+    "role": "Software Engineer",
+    "problem": "Always late to meetings."
+}'
 ```
