@@ -17,8 +17,10 @@ npx genkit start
 
 ## Deploy to Google Cloud
 
+See <https://firebase.google.com/docs/genkit/cloud-run>
+
 ```bash
-gcloud run deploy strive-ai-api-mvp --source . --region europe-west1 --no-allow-unauthenticated
+gcloud run deploy strive-ai-api-mvp --source . --region europe-west1 --allow-unauthenticated
 ```
 
 > _Warning_: This API requires no authentication.
@@ -28,9 +30,9 @@ This outputs a service URL.
 ## Invoke the flow
 
 ```bash
-curl -X POST $SERVICE_URL/menuSuggestionFlow \
--H "Content-Type: application/json" -d '{
+curl -X POST $SERVICE_URL/striveFlow \
+-H "Content-Type: application/json" -d '{"data": {
     "role": "Software Engineer",
     "problem": "Always late to meetings."
-}'
+}}'
 ```

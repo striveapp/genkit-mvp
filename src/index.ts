@@ -226,11 +226,15 @@ Career Development and Progress Rules
     // it to a string, but more complicated flows might coerce the response into
     // structured output or chain the response into another LLM call, etc.
     return llmResponse.text();
-  },
+  }
 );
 
 // Start a flow server, which exposes your flows as HTTP endpoints. This call
 // must come last, after all of your plug-in configuration and flow definitions.
 // You can optionally specify a subset of flows to serve, and configure some
 // HTTP server options, but by default, the flow server serves all defined flows.
-startFlowsServer();
+startFlowsServer({
+  cors: {
+    origin: "*",
+  },
+});
